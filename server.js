@@ -9,7 +9,8 @@ var PORT = process.env.PORT || 3001;
 app.get('/', (req, res) => {
   // eslint-disable-next-line no-console
   console.log('req = \n', req);
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.send('Test CI with Travis');
+  // res.sendFile(path.join(__dirname, "index.html"));
 });
 
 const server = app.listen(PORT, () => {
