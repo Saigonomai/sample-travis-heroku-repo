@@ -1,24 +1,19 @@
 {
-  "name": "travis02",
+  "name": "sample-travis-heroku-repo",
   "version": "1.0.0",
-  "description": "this repo illustrates using git heroku and travis together at last",
+  "description": "In this activity we will set up the project repo with Travis CI to ensure that linting passes on all changes before they can be merged into master.",
   "main": "server.js",
   "scripts": {
-    "test": "npm run lint server.js && mocha ./tests/index-spec.js",
-    "start": "node server.js"
+    "test": "npm run lint server.js && mocha ./tests/index-spec.js --exit",
+    "start": "node server.js",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Saigonomai/sample-travis-heroku-repo.git"
   },
-  "keywords": [
-    "git",
-    "heroku",
-    "travis",
-    "CI"
-  ],
   "author": "Edward J. Apostol",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Saigonomai/sample-travis-heroku-repo/issues"
   },
@@ -29,8 +24,11 @@
     "mocha": "^6.1.4"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
